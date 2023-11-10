@@ -9,16 +9,16 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/sagernet/sing/common"
-	E "github.com/sagernet/sing/common/exceptions"
-	"github.com/sagernet/sing/common/rw"
-
 	"github.com/google/go-github/v45/github"
 	"github.com/maxmind/mmdbwriter"
 	"github.com/maxmind/mmdbwriter/inserter"
 	"github.com/maxmind/mmdbwriter/mmdbtype"
 	"github.com/oschwald/geoip2-golang"
 	"github.com/oschwald/maxminddb-golang"
+	"github.com/sagernet/sing/common"
+	E "github.com/sagernet/sing/common/exceptions"
+	"github.com/sagernet/sing/common/rw"
+	"github.com/sethvargo/go-githubactions"
 	"github.com/sirupsen/logrus"
 )
 
@@ -224,15 +224,12 @@ func release(source string, destination string) error {
 	if err != nil {
 		return err
 	}
-	if err != nil {
-		return err
-	}
 	setActionOutput("tag", *sourceRelease.Name)
 	return nil
 }
 
 func setActionOutput(name string, content string) {
-	os.Stdout.WriteString("::set-output name=" + name + "::" + content + "\n")
+	githubactions.SetOutput(name, content)
 }
 
 func main() {
@@ -240,7 +237,7 @@ func main() {
 	if len(os.Args) >= 3 {
 		err = local(os.Args[1], os.Args[2], os.Args[3:])
 	} else {
-		err = release("Dreamacro/maxmind-geoip", "sagernet/sing-geoip")
+		err = release("Loyalsoldier/geoip", "sagernet/sing-geoip")
 	}
 	if err != nil {
 		logrus.Fatal(err)
