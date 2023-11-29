@@ -19,12 +19,16 @@ jobs:
       - name: Build geoip
         id: build
         run: go run -v .
+      - name: Release rule sets
+        if: steps.build.outputs.skip != 'true'
+        run: .github/release-rule-set.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate sha256 hash
         if: steps.build.outputs.skip != 'true'
         run: |
           sha256sum geoip.db > geoip.db.sha256sum
-          sha256sum geoip-cn.db > geoip-cn.db.sha256sum
-      - name: Create a release
+      - name: Release geoip
         if: steps.build.outputs.skip != 'true'
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -38,8 +42,6 @@ jobs:
           files: |
             geoip.db
             geoip.db.sha256sum
-            geoip-cn.db
-            geoip-cn.db.sha256sum
       - name: Delete older releases
         uses: dev-drprasad/delete-older-releases@v0.3.2
         with:
