@@ -17,8 +17,8 @@ github.com/oschwald/geoip2-golang v1.9.0/go.mod h1:BHK6TvDyATVQhKNbQBdrj9eAvuwOM
 github.com/oschwald/maxminddb-golang v1.12.0 h1:9FnTOD0YOhP7DGxGsq4glzpGy5+w7pq50AS6wALUMYs=
 github.com/oschwald/maxminddb-golang v1.12.0/go.mod h1:q0Nob5lTCqyQ8WT6FYgS1L7PXKVVbgiymefNwIjPzgY=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
-github.com/sagernet/sing v0.2.18-0.20231129075305-eb56a60214be h1:FigAM9kq7RRXmHvgn8w2a8tqCY5CMV5GIk0id84dI0o=
-github.com/sagernet/sing v0.2.18-0.20231129075305-eb56a60214be/go.mod h1:OL6k2F0vHmEzXz2KW19qQzu172FDgSbUSODylighuVo=
+github.com/sagernet/sing v0.2.18 h1:2Ce4dl0pkWft+4914NGXPb8OiQpgA8UHQ9xFOmgvKuY=
+github.com/sagernet/sing v0.2.18/go.mod h1:OL6k2F0vHmEzXz2KW19qQzu172FDgSbUSODylighuVo=
 github.com/sagernet/sing-box v1.6.8-0.20231129123339-5a56487cf544 h1:kHe9kQpKMEmGJbTdDntXA0rl1BdQWQZtkDaxmZkAPC4=
 github.com/sagernet/sing-box v1.6.8-0.20231129123339-5a56487cf544/go.mod h1:C5Gcyr9BsHs1Iq7eAY53hAlh/j+5fjJVsLA18z/7ZL4=
 github.com/sagernet/sing-dns v0.1.11 h1:PPrMCVVrAeR3f5X23I+cmvacXJ+kzuyAsBiWyUKhGSE=
