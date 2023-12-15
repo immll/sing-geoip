@@ -224,7 +224,7 @@ func release(source string, destination string) error {
 	if err != nil {
 		return err
 	}
-	setActionOutput("tag", *sourceRelease.Name)
+	setActionOutput("tag", *sourceRelease.TagName)
 	return nil
 }
 
@@ -237,7 +237,7 @@ func main() {
 	if len(os.Args) >= 3 {
 		err = local(os.Args[1], os.Args[2], os.Args[3:])
 	} else {
-		err = release("Loyalsoldier/geoip", "sagernet/sing-geoip")
+		err = release("Loyalsoldier/geoip", "immll/sing-geoip")
 	}
 	if err != nil {
 		logrus.Fatal(err)
