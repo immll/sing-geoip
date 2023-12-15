@@ -40,3 +40,10 @@ jobs:
             geoip.db.sha256sum
             geoip-cn.db
             geoip-cn.db.sha256sum
+      - name: Delete older releases
+        uses: dev-drprasad/delete-older-releases@v0.3.2
+        with:
+          keep_latest: 1
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
