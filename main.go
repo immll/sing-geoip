@@ -63,7 +63,7 @@ func download(release *github.RepositoryRelease) ([]byte, error) {
 		return *it.Name == "Country.mmdb"
 	})
 	if geoipAsset == nil {
-		return nil, E.New("Country.mmdb not found in upstream release ", release.Name)
+		return nil, E.New("Country.mmdb not found in upstream release ", release.TagName)
 	}
 	return get(geoipAsset.BrowserDownloadURL)
 }
@@ -172,7 +172,7 @@ func release(source string, destination string, output string, ruleSetOutput str
 	if err != nil {
 		log.Warn("missing destination latest release")
 	} else {
-		if os.Getenv("NO_SKIP") != "true" && strings.Contains(*destinationRelease.Name, *sourceRelease.Name) {
+		if os.Getenv("NO_SKIP") != "true" && strings.Contains(*destinationRelease.TagName, *sourceRelease.TagName) {
 			log.Info("already latest")
 			setActionOutput("skip", "true")
 			return nil
