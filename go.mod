@@ -7,7 +7,7 @@ require (
 	github.com/maxmind/mmdbwriter v1.0.0
 	github.com/oschwald/geoip2-golang v1.9.0
 	github.com/oschwald/maxminddb-golang v1.12.0
-	github.com/sagernet/sing v0.3.8
+	github.com/sagernet/sing v0.4.1
 	github.com/sagernet/sing-box v1.8.14
 	github.com/sethvargo/go-githubactions v1.2.0
 )
@@ -23,6 +23,6 @@ require (
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.19.0 // indirect
+	golang.org/x/sys v0.21.0 // indirect
 	golang.org/x/tools v0.20.0 // indirect
 )
