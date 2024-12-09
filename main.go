@@ -223,7 +223,7 @@ func release(source string, destination string, output string, ruleSetOutput str
 		if err != nil {
 			return err
 		}
-		err = srs.Write(outputRuleSet, plainRuleSet, false)
+		err = srs.Write(outputRuleSet, plainRuleSet, C.RuleSetVersion2)
 		if err != nil {
 			outputRuleSet.Close()
 			return err
