@@ -7,7 +7,7 @@ require (
 	github.com/maxmind/mmdbwriter v1.0.0
 	github.com/oschwald/geoip2-golang v1.11.0
 	github.com/oschwald/maxminddb-golang v1.13.1
-	github.com/sagernet/sing v0.6.2
+	github.com/sagernet/sing v0.6.3
 	github.com/sagernet/sing-box v1.11.4
 	github.com/sethvargo/go-githubactions v1.3.0
 )
