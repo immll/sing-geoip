@@ -5,7 +5,7 @@ go 1.23.1
 require (
 	github.com/google/go-github/v45 v45.2.0
 	github.com/maxmind/mmdbwriter v1.0.0
-	github.com/oschwald/geoip2-golang v1.11.0
+	github.com/oschwald/geoip2-golang v1.13.0
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/sing v0.6.11
 	github.com/sagernet/sing-box v1.11.14
