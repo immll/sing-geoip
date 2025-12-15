@@ -23,7 +23,7 @@ jobs:
           NO_SKIP: true
         run: go run -v .
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: geoip.db
           path: geoip.db
