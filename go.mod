@@ -9,7 +9,7 @@ require (
 	github.com/oschwald/maxminddb-golang v1.13.1
 	github.com/sagernet/sing v0.8.0-beta.3
 	github.com/sagernet/sing-box v1.12.10
-	github.com/sethvargo/go-githubactions v1.3.1
+	github.com/sethvargo/go-githubactions v1.3.2
 )
 
 require (
