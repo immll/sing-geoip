@@ -23,20 +23,22 @@ import (
 	"github.com/sagernet/sing/common"
 	E "github.com/sagernet/sing/common/exceptions"
 	"github.com/sethvargo/go-githubactions"
+	"golang.org/x/oauth2"
 )
 
 var githubClient *github.Client
 
 func init() {
-	accessToken, loaded := os.LookupEnv("ACCESS_TOKEN")
+	token, loaded := os.LookupEnv("ACCESS_TOKEN")
 	if !loaded {
+		token, loaded = os.LookupEnv("GITHUB_TOKEN")
+	}
+	if !loaded || token == "" {
 		githubClient = github.NewClient(nil)
 		return
 	}
-	transport := &github.BasicAuthTransport{
-		Username: accessToken,
-	}
-	githubClient = github.NewClient(transport.Client())
+	tokenSource := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: token})
+	githubClient = github.NewClient(oauth2.NewClient(context.Background(), tokenSource))
 }
 
 func fetch(from string) (*github.RepositoryRelease, error) {
