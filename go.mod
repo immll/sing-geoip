@@ -1,6 +1,6 @@
 module github.com/immll/sing-geoip
 
-go 1.23.1
+go 1.25.5
 
 require (
 	github.com/google/go-github/v45 v45.2.0
